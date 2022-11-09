@@ -142,42 +142,43 @@ Each dataset is described using the following fields:
 So far we have completed an initial description of the meta-data for the following datasets:
 
 - [X] AHA 
-- [ ] AHRF
+- [X] AHRF
 - [ ] AMGA
 - [ ] BCSC
 - [ ] Care of Chronically Ill Patients
 - [ ] CDC SVI
 - [X] CMS Hospital Compare
 - [ ] CMS Physician Compare
-- [ ] CMS HCRIS
-- [ ] CMS Provider Utilization and Payment Data Physician and Other Supplier 
-- [ ] CHR 
+- [X] CMS HCRIS
+- [X] CMS Provider Utilization and Payment Data Physician and Other Supplier 
+- [X] CHR 
 - [ ] COVID19 Data
 - [X] DCI 
 - [X] FL AHCA
-- [ ] HCUP KID
-- [ ] HCUP NIS
+- [X] HCUP KID
+- [X] HCUP NIS
 - [ ] HCUP NRD
 - [ ] HCUP SASD
-- [ ] HCUP SEED
+- [X] HCUP SEED
 - [X] HCUP SID 
-- [ ] HIMSS
+- [X] HIMSS
 - [ ] HSAF
 - [ ] Intermacs Data
 - [ ] Lown Institute Hospital Index
 - [ ] MBSAQIP
 - [ ] MEPS
 - [ ] MIMIC
+- [X] N3C
 - [ ] NCDB Dataset 
 - [ ] NHATS 
 - [ ] NPDB
 - [ ] NSQIP 
-- [ ] NTDB 
-- [X] NY SPARCS 
+- [X] NTDB 
+- [ ] NY SPARCS 
 - [ ] OIG LEIE  
 - [ ] RAND
 - [ ] SEER 
-- [ ] STAR
+- [X] STAR
 - [ ] Texas Hospital Discharge Data
 - [ ] USPS Zip Code database 
 - [ ] Vermont Hospital Discharge Data
