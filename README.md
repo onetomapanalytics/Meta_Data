@@ -67,7 +67,7 @@ The Onetomap project currently hosts over 40 healthcare-related databases that c
 -  CMS – Physician Compare
 -  CMS HCRIS - Healthcare Cost Report Information System
 -  CMS Provider Utilization and Payment Data Physician and Other Supplier 
--  CHR - County Health Rankings Data
+-  CHRR - County Health Rankings Data
 -  COVID19 Data
 -  DCI - Distressed Communities Index Dataset
 -  FL AHCA - Florida Agency for Healthcare Administration
@@ -106,35 +106,34 @@ To see details about each one of these, please check the [Wiki for this reposito
 
 Each dataset is described using the following fields:  
 
-
-| **Field**                                                | **Description and examples**                                                                                                                        |
-|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1. General description                         |         |                                               
-|   a. Database primary purpose      | e.g., develop networks or infrastructure, provide a longitudinal population health dataset, drive policy-making, hospital reimbursement information |
-|   a. Overall data type                                    | health facilities, hospital expenditures, demographics, health outcomes, SDOH, economics, environment                                               |
-|   b. Dataset type                                         | longitudinal or cross-sectional                                                                                                                     |
-|   c. Data source                                          | EHR, Claims, Registry/cohort, randomized trials, survey, satellite                                                                                  |
-|   d. Data level                                           | patient level or hospital level                                                                                                                     |
-|   e. Geographic location of the data collection sites     |                                                                                                                                                     |
-|   f. Sponsor, manager, or home institution                | govern, agency, department                                                                                                                          |
-|   g. Date range                                           |                                                                                                                                                     |
-|   h. Geolocation data                                     | Zip codes, ZCTA, county                                                                                                                             |
-|   i. Dates                                                |                                                                                                                                                     |
-|   j. Hospital identifiers                                 |                                                                                                                                                     |
-|   k. NPI                                                  |                                                                                                                                                     |
-|   l. Longitudinal tracking                                | Track patients within hospitals, Track patients across hospitals, Track providers                                                                   |
-|   m. Financial variables                                  |                                                                                                                                                     |
-|   n. Clinical areas of interest                           | Use omop-cdm concepts to classify the databases                                                                                                     |
-|   o. Number of records                                    |                                                                                                                                                     |
-|   p. Variables that are uniquely present in this dataset  |                                                                                                                                                     |
-|   q. Database caveats and limitations                     | List overall limitations                                                                                                                            |
-|   r. Other                                                |                                                                                                                                                     |
-| 2. Applicable methods                                    | Which Data Science methods can be used with this dataset                                                                                            |
-| 3. High impact designs and novel variables               | High impact publications                                                                                                                         |
-| 4. Data dictionary                                       |                                                                                                                                                     |
-| 5. Variable categories                                   | Patient demographiscs, hospital discharge records, charges, diagnosis                                                                               |
-| 6. Linkage to other datasets                             |                                                                                                                                                     |
-| 7. Missing data patterns                                 |                                                                                                                                                     |
+| **Field** | **Description** | **Example based on N3C database** |
+|---|---|---|
+| **1. General description** |  |  |
+| *a. Database primary purpose* | Main objective of the existence of the database  | Provide a large, centralized data resource to allow research teams to study COVID-19 and identify potential treatments as the pandemic evolves. |
+| *b. Overall data type* | Type of document where the data is presented (e.g. hospital expenditures, demographics) | Health outcomes |
+| *c. Dataset type* | Type of register of the dataset considering the focused subject and the period of time (e.g. longitudinal, cross-sectional) | Longitudinal |
+| *d. Data source* | Type of source from where the data was extracted (e.g. claims data, clinical trials) | Electronic Health Records (EHR) |
+| *e. Data level* | Minimal level of collection of data (e.g. hospital level, patient level) | Patient level |
+| *f. Geographic location of the data collection sites* | Country and institutions from where data was collected | United States;  List of institutions available in https://ncats.nih.gov/n3c/resources/data-contribution/data-transfer-agreement-signatories |
+| *g. Sponsor, manager, or home institution* | Institutions related to the funding, management and maintenance of the project | National Center for Advancing Translational Sciences (NCATS); National Institutes of Health (NIH) |
+| *h. Date range* | Time interval of data register and/or availability | Jan 1, 2018 to most recent data partner extraction date |
+| *i. Geolocation data* | Zip codes, ZCTA, county | Zip codes for patients available under the limited dataset |
+| *j. Dates* | Dates availability (day, month, year) | Available under the limited dataset |
+| *k. Hospital identifiers* | Code that identifies the hospitals involved in the dataset | Synthetic data partner ID |
+| *l. NPI* | If available. National Provider Identifier (NPI) is a unique identification number for covered health care providers. | No |
+| *m. Physician identifiers* | Code that identifies the physician involved in the database | Synthetic provider ID |
+| *n. Longitudinal tracking* | Pattern used by the dataset to track patients within and across hospitals and/or to track providers | Track patients within and across participating hospitals on the inpatient, outpatient, ED, and office levels. And track providers across 45 hospitals that currently provide the provider ID and hospitals using the occurrences (e.g., visit, procedure) and the above-mentioned IDs.  |
+| *o. Financial variables* | Categories of financial related variables contained in the dataset | None |
+| *p. Clinical areas of interest* | OMOP-CDM concepts that classify the database | All clinical areas |
+| *q. Number of records* | Quantitative measure of data in the dataset  | N3C contains information on approximately 15.5 million anonymized persons as of Sep 8th, 2022. The Enclave has 18.1 billion total rows (Sep 2022) containing more than 6 million COVID+ cases, 1.6 billion clinical observations, 8.5 billion lab results, 2.8 billion medication records, 849.4 million procedures, and 916.0 million visits |
+| *r. Variables that are uniquely present in this dataset* | Unusual type or exclusive information provided by the dataset | COVID variables, inpatient medications, drugs in general, labs, zip codes and dates for patients in the limited dataset, and connection among inpatient, outpatient, ED, and office data |
+| *s. Database caveats and limitations* | Limitations presented by the database | (1) Hospitals cannot be identified, as defined by the Data Use Agreement (DUA); (2) it is restricted to patients who have undergone a COVID test; (3) all instances of a condition or procedure might be mapped to different OMOP-CDM concepts; (4) lab results values are not necessarily consistent across hospitals |
+| *t. Other* | Other important informations about the database | Accordingly to the user and access requirements, there are three types of datasets available that vary in contents: *Limited* - patient data retain PHI such as dates and zip codes. *De-identified* - PHI are changed to protect patients' privacy. *Synthetic* - data derived from the limited dataset that statistically resemble patient information but are not real patient data. |
+| **2. Applicable methods** | List of examples of data science methods that can be used with the dataset based on published articles | Association, such as logistic regression models; machine learning; propensity scores; and sensitivity analysis |
+| **3. High impact designs and novel variables** | List of examples of published high-impact articles that used the dataset | [Evaluate COVID-19 severity and risk factors](https://pubmed.ncbi.nlm.nih.gov/34255046/)  |
+| **4. Data dictionary** | Detailed description about the content of dataset's domains | N3C data dictionary is available at https://github.com/onetomapanalytics/Meta_Data/wiki/N3C---Data-dictionary  |
+| **5. Variable categories** | Group of variables contained in the dataset | Informations about patient demographics, biological samples, death, visits, procedures, drug exposure, device exposure, condition occurrence, measurements, observation, and COVID-19 test |
+| **6. Linkage to other datasets** | Suggestions of datasets linkage based on their characteristics | Linkages can be established for any dataset that might have environmental or Social Determinants of Health (SDoH) information |
 
 
 ## Roadmap
@@ -144,45 +143,54 @@ So far we have completed an initial description of the meta-data for the followi
 - [X] AHA 
 - [X] AHRF
 - [ ] AMGA
-- [ ] BCSC
+- [X] BCSC Hormone therapy
+- [X] BCSC Risk estimation
+- [X] BCSC Risk Factors
 - [ ] Care of Chronically Ill Patients
-- [ ] CDC SVI
+- [ ] CBECS
+- [X] CDC SVI
 - [X] CMS Hospital Compare
-- [ ] CMS Physician Compare
+- [X] CMS Physician Compare
 - [X] CMS HCRIS
 - [X] CMS Provider Utilization and Payment Data Physician and Other Supplier 
-- [X] CHR 
+- [X] CHRR
 - [ ] COVID19 Data
 - [X] DCI 
+- [ ] DRG
+- [ ] Feeding America
 - [X] FL AHCA
+- [ ] Gun violence
 - [X] HCUP KID
 - [X] HCUP NIS
-- [ ] HCUP NRD
+- [X] HCUP NRD
 - [ ] HCUP SASD
 - [X] HCUP SEED
 - [X] HCUP SID 
 - [X] HIMSS
-- [ ] HSAF
-- [ ] Intermacs Data
+- [X] HSAF
+- [X] Intermacs Data
+- [ ] Kaiser Hospital Network
 - [ ] Lown Institute Hospital Index
-- [ ] MBSAQIP
-- [ ] MEPS
+- [X] MBSAQIP
+- [X] MEPS
 - [ ] MIMIC
 - [X] N3C
-- [ ] NCDB Dataset 
+- [X] NCDB
 - [ ] NHATS 
-- [ ] NPDB
-- [ ] NSQIP 
+- [ ] NORC
+- [X] NPDB
+- [X] NSQIP 
 - [X] NTDB 
-- [ ] NY SPARCS 
+- [X] NY SPARCS 
 - [ ] OIG LEIE  
-- [ ] RAND
-- [ ] SEER 
+- [X] RAND
+- [ ] Scotland data
+- [X] SEER 
 - [X] STAR
-- [ ] Texas Hospital Discharge Data
+- [X] Texas Hospital Discharge Data
 - [ ] USPS Zip Code database 
 - [ ] Vermont Hospital Discharge Data
-- [ ] WRDS Bond Data  
+- [X] WRDS Bond Data  
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
